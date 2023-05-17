@@ -1,6 +1,6 @@
 package br.com.biblioteca.handler;
 
-import br.com.biblioteca.exceptions.Exception1;
+import br.com.biblioteca.exceptions.ResourceNotFoundException;
 import br.com.biblioteca.exceptions.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,14 +26,14 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(Exception1.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public final ResponseEntity<ExceptionResponse> handleNotFoundExceptions
             (Exception ex, WebRequest request){
 
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),
                 ex.getMessage(),
                 request.getDescription(false));
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST   );
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
 
