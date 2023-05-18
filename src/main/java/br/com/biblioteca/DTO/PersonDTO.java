@@ -14,7 +14,7 @@ public class PersonDTO implements Serializable {
 
     private String lastName;
 
-    private String adress;
+    private String address;
 
     private String gender;
 
@@ -45,12 +45,12 @@ public class PersonDTO implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getGender() {
@@ -66,11 +66,11 @@ public class PersonDTO implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PersonDTO personDTO = (PersonDTO) o;
-        return Objects.equals(id, personDTO.id) && Objects.equals(firstName, personDTO.firstName) && Objects.equals(lastName, personDTO.lastName) && Objects.equals(adress, personDTO.adress) && Objects.equals(gender, personDTO.gender);
+        return Objects.equals(id, personDTO.id) && Objects.equals(firstName, personDTO.firstName) && Objects.equals(lastName, personDTO.lastName) && Objects.equals(address, personDTO.address) && Objects.equals(gender, personDTO.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, adress, gender);
+        return Objects.hash(id, firstName, lastName, address, gender);
     }
 }
