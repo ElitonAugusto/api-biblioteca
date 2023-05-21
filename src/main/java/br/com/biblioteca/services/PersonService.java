@@ -2,7 +2,7 @@ package br.com.biblioteca.services;
 
 import br.com.biblioteca.DTO.PersonDTO;
 import br.com.biblioteca.exceptions.ResourceNotFoundException;
-import br.com.biblioteca.mapper.Mapper;
+import br.com.biblioteca.mapper.PersonMapper;
 import br.com.biblioteca.models.Person;
 import br.com.biblioteca.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +17,18 @@ public class PersonService {
     PersonRepository repository;
 
     public List<PersonDTO> findAll(){
-        return Mapper.parseListObjects(repository.findAll(), PersonDTO.class);
+        return PersonMapper.parseListObjects(repository.findAll(), PersonDTO.class);
     }
 
     public PersonDTO findyById(Long id){
         Person entity = repository.findById(id).
                 orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado nada para esse ID"));
-        return Mapper.parseObject(entity, PersonDTO.class);
+        return PersonMapper.parseObject(entity, PersonDTO.class);
     }
 
     public PersonDTO create (PersonDTO person){
-        Person entity = Mapper.parseObject(person, Person.class);
-        return Mapper.parseObject(repository.save(entity), PersonDTO.class);
+        Person entity = PersonMapper.parseObject(person, Person.class);
+        return PersonMapper.parseObject(repository.save(entity), PersonDTO.class);
     }
 
     public PersonDTO update (PersonDTO person){
@@ -42,7 +42,7 @@ public class PersonService {
         newPerson.setAddress(person.getAddress());
         newPerson.setGender(person.getGender());
 
-        return Mapper.parseObject(repository.save(newPerson), PersonDTO.class);
+        return PersonMapper.parseObject(repository.save(newPerson), PersonDTO.class);
     }
 
     public void delete (Long id){

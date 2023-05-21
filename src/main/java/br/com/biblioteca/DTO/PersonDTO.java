@@ -1,14 +1,18 @@
 package br.com.biblioteca.DTO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@JsonPropertyOrder({"id", "firstName", "lastName", "address", "gender"})
 public class PersonDTO extends RepresentationModel<PersonDTO> implements Serializable {
     private static final long serialVersionUID = 1L;
-    
+
+    @JsonProperty("id")
     private Long key;
 
     private String firstName;
