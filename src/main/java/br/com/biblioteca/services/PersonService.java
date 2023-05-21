@@ -33,10 +33,10 @@ public class PersonService {
 
     public PersonDTO update (PersonDTO person){
 
-        Person entity = repository.findById(person.getId()).
+        Person entity = repository.findById(person.getKey()).
                 orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado nada para esse ID"));
         Person newPerson = new Person();
-        newPerson.setId(person.getId());
+        newPerson.setId(person.getKey());
         newPerson.setFirstName(person.getFirstName());
         newPerson.setLastName(person.getLastName());
         newPerson.setAddress(person.getAddress());
