@@ -14,15 +14,16 @@ public class PersonMapper {
 
     static {
         mapper = new ModelMapper();
-        configurePersonToPersonVOMapping();
+        configureIdPersonAndPersonDTO();
     }
 
-    private static void configurePersonToPersonVOMapping() {
+    private static void configureIdPersonAndPersonDTO() {
         TypeMap<Person, PersonDTO> typeMap = mapper.createTypeMap(Person.class, PersonDTO.class);
         typeMap.addMapping(Person::getId, PersonDTO::setKey);
 
         TypeMap<PersonDTO, Person> typeMap1 = mapper.createTypeMap(PersonDTO.class, Person.class);
         typeMap1.addMapping(PersonDTO::getKey, Person::setId);
+
     }
     public static <Origin, Destiny>  Destiny parseObject(Origin origin, Class<Destiny> destination){
         return mapper.map(origin, destination);

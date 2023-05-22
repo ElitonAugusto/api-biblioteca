@@ -67,7 +67,7 @@ public class ModelMapperConverterTest {
 
     @Test
     public void parserDTOListToEntityListTest() {
-        List<Person> outputList = PersonMapper.parseListObjects(inputObject.mockVOList(), Person.class);
+        List<Person> outputList = PersonMapper.parseListObjects(inputObject.mockDTOList(), Person.class);
         Person outputZero = outputList.get(0);
 
         assertEquals(Long.valueOf(0L), outputZero.getId());

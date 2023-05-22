@@ -12,7 +12,7 @@ public class MockPerson {
     }
 
     public PersonDTO mockVO() {
-        return mockVO(0);
+        return mockDTO(0);
     }
 
     public List<Person> mockEntityList() {
@@ -23,17 +23,17 @@ public class MockPerson {
         return persons;
     }
 
-    public List<PersonDTO> mockVOList() {
+    public List<PersonDTO> mockDTOList() {
         List<PersonDTO> persons = new ArrayList<>();
         for (int i = 0; i < 14; i++) {
-            persons.add(mockVO(i));
+            persons.add(mockDTO(i));
         }
         return persons;
     }
 
     public Person mockEntity(Integer number) {
         Person person = new Person();
-        person.setAddress("Addres Test" + number);
+        person.setAddress("Address Test" + number);
         person.setFirstName("First Name Test" + number);
         person.setGender(((number % 2)==0) ? "Male" : "Female");
         person.setId(number.longValue());
@@ -41,9 +41,9 @@ public class MockPerson {
         return person;
     }
 
-    public PersonDTO mockVO(Integer number) {
+    public PersonDTO mockDTO(Integer number) {
         PersonDTO person = new PersonDTO();
-        person.setAddress("Addres Test" + number);
+        person.setAddress("Address Test" + number);
         person.setFirstName("First Name Test" + number);
         person.setGender(((number % 2)==0) ? "Male" : "Female");
         person.setKey(number.longValue());
