@@ -11,3 +11,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: false
+springdoc:
+  pathsToMach: /persons/**
+  swagger-ui:
+    user-root-path: true
