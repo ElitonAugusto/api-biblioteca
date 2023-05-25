@@ -6,7 +6,6 @@ import br.com.biblioteca.models.Person;
 import br.com.biblioteca.repositories.PersonRepository;
 import br.com.biblioteca.services.PersonService;
 import br.com.biblioteca.unittests.mocks.MockPerson;
-import jakarta.inject.Inject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

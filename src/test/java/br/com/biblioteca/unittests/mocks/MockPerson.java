@@ -11,7 +11,7 @@ public class MockPerson {
         return mockEntity(0);
     }
 
-    public PersonDTO mockVO() {
+    public PersonDTO mockDTO() {
         return mockDTO(0);
     }
 
