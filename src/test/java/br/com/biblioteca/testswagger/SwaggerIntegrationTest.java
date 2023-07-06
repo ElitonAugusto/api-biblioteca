@@ -1,7 +1,7 @@
-package br.com.biblioteca.integrationtests.testswagger;
+package br.com.biblioteca.testswagger;
 
 import  static io.restassured.RestAssured.given;
-import br.com.biblioteca.integrationtests.testscontainers.AbstractIntegrationTest;
+import br.com.biblioteca.testscontainers.AbstractIntegrationTest;
 import configs.TestConfigs;
 import static  org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
